@@ -59,6 +59,25 @@
     End Sub
 
     Private Sub searchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
-        MessageBox.Show("Feature coming soon", "Not available at the moment", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If searchTxt.Text = "" Then
+            Call notFound()
+            Exit Sub
+        Else
+            ChildrenBindingSource.Filter = "(Convert(ID, 'System.String') LIKE '" & searchTxt.Text & "')" & _
+                "OR (Name LIKE '" & searchTxt.Text & "')"
+            If ChildrenBindingSource.Count <> 0 Then
+                With ChildrenDataGridView
+                    .DataSource = ChildrenBindingSource
+
+                End With
+            Else
+                MsgBox("The search item was not found")
+                ChildrenBindingSource.Filter = Nothing
+            End If
+        End If
+    End Sub
+
+    Private Sub notFound()
+
     End Sub
 End Class

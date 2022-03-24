@@ -56,8 +56,8 @@ Partial Class Form3
         Me.NameTextBox = New System.Windows.Forms.TextBox()
         Me.DobDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.GenderTextBox = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.searchBtn = New System.Windows.Forms.Button()
+        Me.searchTxt = New System.Windows.Forms.TextBox()
         Me.deleteBtn = New System.Windows.Forms.Button()
         Me.saveBtn = New System.Windows.Forms.Button()
         Me.uploadBtn = New System.Windows.Forms.Button()
@@ -297,8 +297,8 @@ Partial Class Form3
         Me.PanelLogin.Controls.Add(Me.DobDateTimePicker)
         Me.PanelLogin.Controls.Add(GenderLabel)
         Me.PanelLogin.Controls.Add(Me.GenderTextBox)
-        Me.PanelLogin.Controls.Add(Me.Button1)
-        Me.PanelLogin.Controls.Add(Me.TextBox1)
+        Me.PanelLogin.Controls.Add(Me.searchBtn)
+        Me.PanelLogin.Controls.Add(Me.searchTxt)
         Me.PanelLogin.Controls.Add(Me.deleteBtn)
         Me.PanelLogin.Controls.Add(Me.saveBtn)
         Me.PanelLogin.Controls.Add(Me.uploadBtn)
@@ -450,25 +450,25 @@ Partial Class Form3
         Me.GenderTextBox.Size = New System.Drawing.Size(228, 31)
         Me.GenderTextBox.TabIndex = 49
         '
-        'Button1
+        'searchBtn
         '
-        Me.Button1.BackColor = System.Drawing.Color.Lime
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(771, 334)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(113, 31)
-        Me.Button1.TabIndex = 42
-        Me.Button1.Text = "Search"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.searchBtn.BackColor = System.Drawing.Color.Lime
+        Me.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.searchBtn.Location = New System.Drawing.Point(771, 334)
+        Me.searchBtn.Name = "searchBtn"
+        Me.searchBtn.Size = New System.Drawing.Size(113, 31)
+        Me.searchBtn.TabIndex = 42
+        Me.searchBtn.Text = "Search"
+        Me.searchBtn.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'searchTxt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(546, 334)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(228, 31)
-        Me.TextBox1.TabIndex = 41
+        Me.searchTxt.Location = New System.Drawing.Point(546, 334)
+        Me.searchTxt.Multiline = True
+        Me.searchTxt.Name = "searchTxt"
+        Me.searchTxt.Size = New System.Drawing.Size(228, 31)
+        Me.searchTxt.TabIndex = 41
         '
         'deleteBtn
         '
@@ -709,8 +709,8 @@ Partial Class Form3
     Friend WithEvents Label3 As Label
     Friend WithEvents deleteBtn As Button
     Friend WithEvents saveBtn As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents searchBtn As Button
+    Friend WithEvents searchTxt As TextBox
     Friend WithEvents _St_Paul_Children_s_HomeDataSet As _St_Paul_Children_s_HomeDataSet
     Friend WithEvents StaffBindingSource As BindingSource
     Friend WithEvents StaffTableAdapter As _St_Paul_Children_s_HomeDataSetTableAdapters.StaffTableAdapter

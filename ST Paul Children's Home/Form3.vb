@@ -36,7 +36,26 @@
         staffBtn.Enabled = False
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MessageBox.Show("Feature coming soon", "Not available at the moment", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    Private Sub searchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
+        If searchTxt.Text = "" Then
+            Call notFound()
+            Exit Sub
+        Else
+            StaffBindingSource.Filter = "(Convert(ID, 'System.String') LIKE '" & searchTxt.Text & "')" &
+                "OR (Name LIKE '" & searchTxt.Text & "')"
+            If StaffBindingSource.Count <> 0 Then
+                With StaffDataGridView
+                    .DataSource = StaffBindingSource
+
+                End With
+            Else
+                MsgBox("The search item was not found")
+                StaffBindingSource.Filter = Nothing
+            End If
+        End If
+    End Sub
+
+    Private Sub notFound()
+
     End Sub
 End Class
